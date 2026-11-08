@@ -1,0 +1,17 @@
+{
+  "id": "light-sites-dark-zen",
+  "name": "Light Sites, Dark Zen",
+  "description": "Ask websites for light mode while preserving Zen's browser theme.",
+  "author": "Wasdniak",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Wasdniak/light-sites-dark-zen",
+  "updatedAt": "2026-11-08T21:33:57.000Z",
+  "fork": ["zen"],
+  "style": { "chrome": "", "content": "" },
+  "scripts": {
+    "controller.sys.mjs": { "name": "Reversible website appearance preferences" },
+    "light-sites.uc.js": { "include": ["chrome://browser/content/browser.xhtml"] }
+  },
+  "readme": "README.md",
+  "supportsUnload": true
+}

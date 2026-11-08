@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Website appearance check</title>
+<style>
+  :root { color-scheme: light dark; font: 18px/1.6 system-ui; }
+  body { max-width: 700px; margin: 60px auto; padding: 24px; background: #faf9f6; color: #222; }
+  @media (prefers-color-scheme: dark) { body { background: #181a20; color: #eee; } }
+  output { font-weight: bold; }
+  input, button { font: inherit; padding: 8px; }
+</style>
+<h1>Website appearance check</h1>
+<p>Light preference: <output id="light"></output><br>Dark preference: <output id="dark"></output></p>
+<p>With the mod enabled, this page should have a pale background, report light = true and dark = false, and Zen's sidebar and toolbar should stay dark.</p>
+<p><input aria-label="Example input" placeholder="A native form control"> <button>Example button</button></p>
+<p>Disable the mod in Sine to restore the original website preference. This page listens for changes automatically.</p>
+<script>
+  const light = matchMedia('(prefers-color-scheme: light)');
+  const dark = matchMedia('(prefers-color-scheme: dark)');
+  function update() {
+    document.getElementById('light').textContent = light.matches;
+    document.getElementById('dark').textContent = dark.matches;
+  }
+  light.addEventListener('change', update);
+  dark.addEventListener('change', update);
+  update();
+</script>
+</html>
